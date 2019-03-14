@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>正则生成器</title>
+    <link rel="stylesheet" href="styles/core.css">
+</head>
+<body id="content">
+<div class="application">
+    <header>
+        <a href="https://twitter.com/fuchao2012" class="twitter-follow-button" data-show-count="false"
+           data-show-screen-name="false">Follow @fuchao2012</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');</script>
+        <form id="regexp-form">
+            <section id="search">
+                <h1>正则可视化工具</h1>
+                <input id="regexp-input" type="text" name="search" tabindex="0"/>
+                <button type="submit">Display</button>
+            </section>
+        </form>
+    </header>
+    <section id="intro">
+        <p>输入一个正则，查看一个逻辑图。</p>
+        <p>比如匹配一个手机号:</p>
+        <span>^1(3[0-9]|4[57]|5[0-35-9]|7[01678]|8[0-9])\\d{8}$</span>
+        <p>展示成为图：</p>
+    </section>
+    <section class="result">
+        <div id="error"></div>
+        <ul id="warnings"></ul>
+        <div id="regexp-render"></div>
+    </section>
+
+    <footer>
+      <span id="copyright">
+        <p>Javascripts Inspired by <a href="https://regexper.com">Regexper</a> - CSS Inspired by <a
+                href="http://npmsearch.com/">npm.io</a></p>
+        <p>Built by <a href="http://fuchao.me">Fuchao</a> - (see on <a href="https://github.com/fuchao2012">GitHub</a>)</p>
+      </span>
+    </footer>
+</div>
+</body>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+</html>
